@@ -1,0 +1,657 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+/*
+ * Birthday Mystery - art direction layer.
+ * Palette: warm ivory / cream paper, dusty rose, chocolate + cocoa grounding,
+ * burgundy & cherry accents, sage, antique gold. No pure black.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Named palette tokens */
+  --color-ivory: var(--ivory);
+  --color-cream: var(--cream);
+  --color-parchment: var(--parchment);
+  --color-rose: var(--rose);
+  --color-blush: var(--blush);
+  --color-peach: var(--peach);
+  --color-cocoa: var(--cocoa);
+  --color-chocolate: var(--chocolate);
+  --color-milk: var(--milk);
+  --color-burgundy: var(--burgundy);
+  --color-cherry: var(--cherry);
+  --color-olive: var(--olive);
+  --color-sage: var(--sage);
+  --color-gold: var(--gold);
+  --color-espresso: var(--espresso);
+  --color-taupe: var(--taupe);
+  --color-powder: var(--powder);
+  --color-lavender: var(--lavender);
+  --color-butter: var(--butter);
+  --color-rosebeige: var(--rosebeige);
+
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-sans: "Fira Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-hand: "Caveat", "DM Serif Display", cursive;
+}
+
+:root {
+  --radius: 0.5rem;
+
+  --ivory: oklch(0.953 0.015 58);
+  --cream: oklch(0.975 0.011 63);
+  --parchment: oklch(0.88 0.027 51);
+  --rose: oklch(0.63 0.075 11);
+  --blush: oklch(0.8 0.05 12);
+  --peach: oklch(0.89 0.028 41);
+  --cocoa: oklch(0.43 0.037 35);
+  --chocolate: oklch(0.3 0.03 36);
+  --milk: oklch(0.626 0.033 40.2);
+  --burgundy: oklch(0.32 0.07 15);
+  --cherry: oklch(0.48 0.1 15.6);
+  --olive: oklch(0.489 0.029 124.2);
+  --sage: oklch(0.774 0.024 122.4);
+  --gold: oklch(0.677 0.066 84.7);
+  --espresso: oklch(0.22 0.018 35);
+  --taupe: oklch(0.506 0.021 45.1);
+  --powder: oklch(0.812 0.026 235.6);
+  --lavender: oklch(0.795 0.036 305.4);
+  --butter: oklch(0.914 0.065 96.3);
+  --rosebeige: oklch(0.82 0.032 36);
+
+  --background: var(--ivory);
+  --foreground: var(--espresso);
+  --card: var(--cream);
+  --card-foreground: var(--espresso);
+  --popover: var(--cream);
+  --popover-foreground: var(--espresso);
+  --primary: var(--chocolate);
+  --primary-foreground: var(--cream);
+  --secondary: var(--parchment);
+  --secondary-foreground: var(--chocolate);
+  --muted: var(--parchment);
+  --muted-foreground: var(--taupe);
+  --accent: var(--blush);
+  --accent-foreground: var(--chocolate);
+  --destructive: var(--cherry);
+  --destructive-foreground: var(--cream);
+  --border: oklch(0.489 0.036 35.6 / 28%);
+  --input: oklch(0.489 0.036 35.6 / 35%);
+  --ring: var(--gold);
+
+  --paper-shadow: 0 1px 0 oklch(1 0 0 / 60%) inset, 0 10px 26px -14px oklch(0.394 0.034 42.1 / 55%);
+  --paper-shadow-lift:
+    0 1px 0 oklch(1 0 0 / 70%) inset, 0 22px 42px -20px oklch(0.394 0.034 42.1 / 60%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--espresso);
+    color: var(--espresso);
+    font-family: var(--font-sans);
+    letter-spacing: 0;
+  }
+
+  ::selection {
+    background: var(--blush);
+    color: var(--chocolate);
+  }
+
+  :focus-visible {
+    outline: 2px dashed var(--cocoa);
+    outline-offset: 3px;
+  }
+}
+
+/* ---------- paper + stationery utilities ---------- */
+
+@utility paper {
+  background-color: var(--cream);
+  box-shadow: var(--paper-shadow);
+  position: relative;
+  border: 1px solid oklch(0.489 0.036 35.6 / 22%);
+}
+
+@utility paper-grain {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        oklch(0.394 0.034 42.1 / 3.5%) 0 1px,
+        transparent 1px 3px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        oklch(0.394 0.034 42.1 / 2.5%) 0 1px,
+        transparent 1px 4px
+      );
+  }
+}
+
+@utility torn-bottom {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 96%,
+    92% 100%,
+    84% 96%,
+    76% 100%,
+    68% 96%,
+    60% 100%,
+    52% 96%,
+    44% 100%,
+    36% 96%,
+    28% 100%,
+    20% 96%,
+    12% 100%,
+    4% 96%,
+    0 100%
+  );
+}
+
+@utility rule-lines {
+  background-image: repeating-linear-gradient(
+    180deg,
+    transparent 0 31px,
+    oklch(0.626 0.033 40.2 / 22%) 31px 32px
+  );
+}
+
+@utility ink {
+  color: var(--chocolate);
+}
+
+@utility hand {
+  font-family: var(--font-hand);
+  font-size: 1.35em;
+  line-height: 1.15;
+  color: var(--cocoa);
+}
+
+@utility label-caps {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.66rem;
+  font-weight: 500;
+  color: var(--taupe);
+}
+
+@utility btn-wax {
+  font-family: var(--font-sans);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--cream);
+  background-color: var(--chocolate);
+  padding: 0.85rem 1.6rem;
+  border-radius: 0.125rem;
+  border: 1px solid var(--gold);
+  box-shadow: 4px 4px 0 var(--rosebeige);
+  transition:
+    transform 200ms ease,
+    background-color 200ms ease;
+  &:hover {
+    background-color: var(--cocoa);
+    transform: translateY(-1px);
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+@utility btn-ghost-ink {
+  font-family: var(--font-sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--chocolate);
+  background: transparent;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.125rem;
+  border: 1px dashed var(--cocoa);
+  transition: background-color 200ms ease;
+  &:hover {
+    background-color: oklch(0.847 0.045 5.6 / 45%);
+  }
+}
+
+@utility tape {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -0.7rem;
+    left: 50%;
+    width: 5.5rem;
+    height: 1.5rem;
+    translate: -50% 0;
+    rotate: -3deg;
+    background: oklch(0.903 0.029 40.7 / 75%);
+    border-left: 1px dashed oklch(0.489 0.036 35.6 / 35%);
+    border-right: 1px dashed oklch(0.489 0.036 35.6 / 35%);
+  }
+}
+
+@utility deckle {
+  border: 1px solid oklch(0.489 0.036 35.6 / 25%);
+  outline: 1px solid oklch(0.677 0.066 84.7 / 45%);
+  outline-offset: 5px;
+}
+
+/* ---------- noir editorial scrapbook ---------- */
+
+@utility label-light {
+  color: var(--rosebeige);
+}
+
+.app-shell {
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100svh;
+  width: 100%;
+  background-color: var(--espresso);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 4px,
+      oklch(0.953 0.015 58 / 1.8%) 4px 5px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 7px,
+      oklch(0.953 0.015 58 / 1.4%) 7px 8px
+    );
+}
+
+.app-shell > section:not(.opening-stage) {
+  position: relative;
+  width: min(100% - 2rem, 56rem);
+  margin-inline: auto;
+  min-height: calc(100svh - 2rem);
+  margin-block: 1rem;
+  padding-inline: clamp(1.4rem, 5vw, 4rem);
+  background-color: var(--ivory);
+  border: 1px solid color-mix(in oklab, var(--gold) 45%, transparent);
+  box-shadow: 0 35px 80px -36px oklch(0.1 0.01 35 / 90%);
+}
+
+.app-shell > section:not(.opening-stage)::before {
+  content: "ARCHIVE · SUPREETHAA";
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  color: var(--taupe);
+  font-family: var(--font-sans);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+}
+
+.opening-stage {
+  width: 100%;
+  margin-inline: auto;
+}
+
+.opening-stage::before,
+.opening-stage::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 9rem;
+  height: 13rem;
+  border: 1px solid color-mix(in oklab, var(--gold) 35%, transparent);
+  background: var(--burgundy);
+}
+
+.opening-stage::before {
+  left: 2%;
+  top: 10%;
+  rotate: -8deg;
+}
+
+.opening-stage::after {
+  right: 3%;
+  bottom: 8%;
+  rotate: 7deg;
+  background: var(--rose);
+}
+
+.editorial-spread {
+  border: 8px solid var(--chocolate);
+  box-shadow: 0 42px 85px -28px oklch(0.1 0.01 35 / 90%);
+}
+
+.editorial-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 3px, oklch(0.22 0.018 35 / 3%) 3px 4px),
+    repeating-linear-gradient(90deg, transparent 0 5px, oklch(0.22 0.018 35 / 2.5%) 5px 6px);
+}
+
+.editorial-page-dark {
+  background: var(--chocolate);
+}
+
+.editorial-page-light {
+  background: var(--cream);
+}
+
+.paper-fold {
+  box-shadow: -7px 0 18px oklch(0.1 0.01 35 / 17%), 7px 0 18px oklch(1 0 0 / 24%);
+}
+
+.opening-name {
+  font-family: var(--font-display);
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+
+.evidence-card {
+  width: 9.5rem;
+  min-height: 8.5rem;
+  padding: 1.25rem;
+  color: var(--chocolate);
+  background: var(--parchment);
+  border: 8px solid var(--cream);
+  box-shadow: var(--paper-shadow-lift);
+}
+
+.sound-toggle {
+  color: var(--parchment);
+  background: var(--burgundy);
+  border: 1px solid var(--gold);
+  box-shadow: 3px 3px 0 color-mix(in oklab, var(--espresso) 75%, transparent);
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.sound-toggle:hover {
+  transform: translateY(-1px);
+  background: var(--cherry);
+}
+
+.app-shell .paper {
+  box-shadow: var(--paper-shadow-lift);
+}
+
+.app-shell input {
+  min-height: 3.25rem;
+  border-bottom: 2px solid var(--burgundy);
+}
+
+/* ---------- responsive letter reading experience ---------- */
+
+.mystery-act {
+  padding-block: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.wish-evidence {
+  padding: clamp(1.35rem, 5vw, 3.75rem);
+  overflow: visible;
+  background:
+    linear-gradient(105deg, oklch(1 0 0 / 40%), transparent 28%),
+    var(--cream);
+}
+
+.wish-evidence-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid color-mix(in oklab, var(--cocoa) 25%, transparent);
+  color: var(--taupe);
+  font-size: 0.67rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.wish-copy {
+  width: min(100%, 45rem);
+  margin-inline: auto;
+}
+
+.wish-text {
+  color: var(--espresso);
+  font-family: var(--font-display);
+  font-size: clamp(1.13rem, 1rem + 0.45vw, 1.48rem);
+  line-height: 1.85;
+  text-wrap: pretty;
+}
+
+.wish-paragraph {
+  margin-top: 1.35em;
+  white-space: pre-wrap;
+}
+
+.wish-paragraph:first-child {
+  margin-top: 0;
+}
+
+.wish-paragraph:first-child::first-letter {
+  float: left;
+  margin: 0.07em 0.1em 0 0;
+  color: var(--burgundy);
+  font-size: 3.65em;
+  font-style: italic;
+  line-height: 0.72;
+}
+
+.wish-signoff {
+  padding-top: 1.25rem;
+  border-top: 1px solid color-mix(in oklab, var(--cocoa) 18%, transparent);
+}
+
+.failed-reveal,
+.message-count-note {
+  padding: clamp(1.2rem, 4vw, 2rem);
+  border: 1px dashed color-mix(in oklab, var(--burgundy) 55%, transparent);
+  background: color-mix(in oklab, var(--blush) 38%, var(--cream));
+  box-shadow: 5px 5px 0 color-mix(in oklab, var(--rosebeige) 75%, transparent);
+}
+
+.guess-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+.guess-row .btn-wax {
+  min-height: 3.25rem;
+  flex: 0 0 auto;
+}
+
+.finale-section img,
+.political-choice img {
+  max-width: 100%;
+}
+
+@media (max-width: 1023px) {
+  .editorial-spread {
+    border-width: 5px;
+  }
+}
+
+@media (max-width: 639px) {
+  .app-shell > section:not(.opening-stage) {
+    width: calc(100% - 1rem);
+    min-height: calc(100svh - 1rem);
+    margin-block: 0.5rem;
+  }
+
+  .app-shell > section:not(.opening-stage)::before {
+    right: 1rem;
+    font-size: 0.5rem;
+  }
+
+  .opening-stage::before,
+  .opening-stage::after {
+    display: none;
+  }
+
+  .opening-name {
+    font-size: clamp(1.65rem, 8.2vw, 3.5rem);
+  }
+
+  .editorial-page-dark,
+  .editorial-page-light {
+    min-height: auto;
+  }
+
+  .wish-evidence {
+    padding: 1.25rem;
+  }
+
+  .wish-evidence-meta {
+    font-size: 0.57rem;
+    letter-spacing: 0.09em;
+  }
+
+  .wish-text {
+    font-size: 1.08rem;
+    line-height: 1.72;
+  }
+
+  .guess-row {
+    flex-direction: column;
+  }
+
+  .guess-row .btn-wax {
+    width: 100%;
+  }
+
+  .political-choice {
+    min-height: 7rem;
+  }
+}
+
+/* ---------- Desktop & Large Screen Responsiveness ---------- */
+
+@media (min-width: 1024px) {
+  .app-shell > section:not(.opening-stage) {
+    width: min(100% - 3rem, 64rem);
+    margin-block: 2rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .app-shell > section:not(.opening-stage) {
+    width: min(100% - 4rem, 74rem);
+    margin-block: 2.5rem;
+    padding-inline: 4.5rem;
+  }
+
+  .editorial-spread {
+    max-width: 72rem;
+    margin-inline: auto;
+  }
+}
+
+@media (min-width: 1920px) {
+  .app-shell > section:not(.opening-stage) {
+    width: min(100% - 6rem, 82rem);
+    margin-block: 3rem;
+    padding-inline: 5.5rem;
+  }
+
+  .editorial-spread {
+    max-width: 80rem;
+    margin-inline: auto;
+  }
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@utility sway {
+  animation: sway 6s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+@utility twinkle {
+  animation: twinkle 3.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

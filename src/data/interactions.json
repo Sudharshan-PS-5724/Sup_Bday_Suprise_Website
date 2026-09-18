@@ -1,0 +1,48 @@
+{
+  "recipient": "Supreethaa",
+  "commonWish": {
+    "title": "From all of us",
+    "body": "Fortunately, we all are in Pune. Happy birthday Supreethaa - lucky we get to enjoy your smile and this pleasant evening.\n\nWe all typed something separately, nobody coordinated, and somehow everyone said the same thing in a different way. You'll read them in a minute. Good luck figuring out who said what."
+  },
+  "intermissions": [
+    {
+      "id": "int-loading",
+      "kind": "fakeLoading",
+      "lines": [
+        "Consulting the archives…",
+        "Bribing a witness…",
+        "Redacting the evidence…"
+      ]
+    },
+    {
+      "id": "int-button",
+      "kind": "suspiciousButton"
+    },
+    {
+      "id": "int-confirm",
+      "kind": "repeatedConfirmation"
+    },
+    {
+      "id": "int-taste",
+      "kind": "tasteTest"
+    }
+  ],
+  "finale": {
+    "openingLines": [
+      "Okay.",
+      "Enough nonsense."
+    ],
+    "recap": [
+      "We've made you choose sides.",
+      "We've redistributed your cake.",
+      "We've made you guess people five times.",
+      "We've questioned your decisions."
+    ],
+    "turn": "But beneath all of that, there is something very simple.",
+    "body": [
+      "You are the person everyone in this group thinks of first - when something funny happens, when something awful happens, when something needs a second opinion at 1am.",
+      "This whole silly game exists because nobody could think of a normal way to say what you already know: that being your friend is one of the easier, warmer things in our lives.",
+      "Another year of you. We're glad about it in a way that doesn't fit into a message box."
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+'Log files:
+E:\Sup_Birthday_Web\.npm-cache\_logs\2026-09-18T17_13_33_427Z-debug-0.log
+
+# npm resolution error report
+
+While resolving: tanstack_start_ts@undefined
+Found: three@undefined
+node_modules/three
+  three@"^0.186.0" from the root project
+
+Could not resolve dependency:
+peer three@">=0.156" from @react-three/fiber@9.7.0
+node_modules/@react-three/fiber
+  @react-three/fiber@"^9" from the root project
+  peer @react-three/fiber@"^9.0.0" from @react-three/drei@10.7.8
+  node_modules/@react-three/drei
+    @react-three/drei@"^10" from the root project
+
+Fix the upstream dependency conflict, or retry
+this command with --force or --legacy-peer-deps
+to accept an incorrect (and potentially broken) dependency resolution.
