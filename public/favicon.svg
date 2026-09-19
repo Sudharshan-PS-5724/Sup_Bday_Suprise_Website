@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Candle Flame -->
+  <path d="M32 6c-2 4-4 7-4 10 0 2.2 1.8 4 4 4s4-1.8 4-4c0-3-2-6-4-10z" fill="#ffb703"/>
+  <circle cx="32" cy="16" r="1.5" fill="#fff"/>
+  <!-- Candle Stick -->
+  <rect x="30" y="20" width="4" height="10" rx="1" fill="#e63946"/>
+  
+  <!-- Top Cake Layer -->
+  <path d="M16 30h32v12c0 2.2-1.8 4-4 4H20c-2.2 0-4-1.8-4-4V30z" fill="#ffccd5"/>
+  <!-- Cream Drips -->
+  <path d="M16 30c3 3 5 0 8 3s5 0 8 3 5 0 8 3 5 0 8-3v-6H16z" fill="#ffffff"/>
+  
+  <!-- Base Cake Layer -->
+  <path d="M10 44h44v10c0 3.3-2.7 6-6 6H16c-3.3 0-6-2.7-6-6V44z" fill="#800020"/>
+  <!-- Base Frosting Decor -->
+  <circle cx="18" cy="50" r="2.5" fill="#ffd166"/>
+  <circle cx="27" cy="52" r="2.5" fill="#06d6a0"/>
+  <circle cx="37" cy="52" r="2.5" fill="#118ab2"/>
+  <circle cx="46" cy="50" r="2.5" fill="#ffd166"/>
+  
+  <!-- Cake Plate / Stand -->
+  <path d="M6 58h52v2c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2v-2z" fill="#d4af37"/>
+</svg>
