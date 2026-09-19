@@ -48,13 +48,13 @@ export function PoliticalChoice({
       <div className="mt-6 flex flex-wrap justify-center items-center gap-6">
         <PolaroidFrame
           src="/photos/birthday-person/direction-cinematography-screenplay-hari-0001.jpg"
-          caption="Sticking to values 🚩"
+          caption="Hahaha🚩"
           rotate={-4}
           size="sm"
         />
         <PolaroidFrame
           src="/photos/birthday-person/direction-cinematography-screenplay-hari-0002.jpg"
-          caption="Or right wing ally? 🪷"
+          caption="Hehehe? 🪷"
           rotate={5}
           size="sm"
         />
@@ -74,10 +74,10 @@ export function PoliticalChoice({
               >
                 ← LEFT
               </span>
-              <Sticker tone="sage" rotate={-3}>DMK Vibes</Sticker>
+              <Sticker tone="sage" rotate={-3}>Some Vibes</Sticker>
             </div>
             <p className="mt-3 text-sm text-cocoa">
-              Everything is Everyone. Leftist take even in direction.
+              Think and Click
             </p>
           </button>
 
@@ -93,10 +93,10 @@ export function PoliticalChoice({
               >
                 RIGHT →
               </span>
-              <Sticker tone="cherry" rotate={4}>BJP Ally?</Sticker>
+              <Sticker tone="cherry" rotate={4}>Which side?</Sticker>
             </div>
             <p className="mt-3 text-sm text-cocoa">
-              Righting right may take your rights off.
+              Same. Think and Click
             </p>
           </button>
         </div>

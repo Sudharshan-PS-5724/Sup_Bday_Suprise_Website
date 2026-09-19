@@ -3,6 +3,7 @@ import banterData from "@/data/banter.json";
 import languagesData from "@/data/languages.json";
 import interactionsData from "@/data/interactions.json";
 import birthdayPhotosData from "@/data/photos.json";
+import { getCustomWishes } from "@/components/AddWishModal";
 
 export type VisualStyle =
   | "letter"
@@ -29,24 +30,11 @@ export interface Wish {
 
 export type BanterKey = keyof typeof banterData;
 
-const voiceNoteNames = new Set([
-  "Akash",
-  "Arivumathi",
-  "Monifa",
-  "Roshny",
-  "Singaram",
-  "Sreekar",
-  "Suraj",
-  "Suruthi",
-  "Swetha KV",
-]);
-
-import { getCustomWishes } from "@/components/AddWishModal";
-
 /** Static wishes loaded from wishes.json */
-export const staticWishes = (wishesData as Wish[]).map(({ photo: _photo, ...wish }) =>
-  voiceNoteNames.has(wish.name) ? { ...wish, audio: `/audio/${wish.name}.mp3` } : wish,
-);
+export const staticWishes = (wishesData as Wish[]).map(({ photo: _photo, ...wish }) => ({
+  ...wish,
+  audio: wish.audio || `/audio/${wish.name}.mp3`,
+}));
 
 /** Combines static wishes from wishes.json and custom wishes added live from website */
 export function getCombinedWishes(): Wish[] {
@@ -61,4 +49,4 @@ export const content = interactionsData;
 /** Photos of the birthday person, displayed in a different random order each play-through. */
 export const birthdayPhotos = birthdayPhotosData as string[];
 
-export const GUESSES_PER_WISH = 5;
+export const GUESSES_PER_WISH = 3;
