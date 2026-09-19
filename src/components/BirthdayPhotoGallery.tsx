@@ -46,7 +46,7 @@ export function BirthdayPhotoGallery({ photos }: { photos: string[] }) {
             <img
               src={photo}
               alt="A birthday memory"
-              loading="lazy"
+              loading="eager"
               className="aspect-square w-full object-cover rounded-xs"
             />
           </motion.figure>

@@ -505,7 +505,7 @@ export function MysteryRound({
           <img
             src={wish.meme}
             alt="A reaction picture chosen for this moment"
-            loading="lazy"
+            loading="eager"
             className="max-h-[32svh] w-auto max-w-full rounded-sm object-contain border-8 border-cream shadow-2xl"
           />
         </motion.div>

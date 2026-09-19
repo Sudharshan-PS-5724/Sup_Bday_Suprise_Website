@@ -13,6 +13,7 @@ import { Finale } from "@/components/acts/Finale";
 import { AddWishModal } from "@/components/AddWishModal";
 import { content, getCombinedWishes, type Wish } from "@/lib/content";
 import { setupMedia } from "@/lib/mediaSetup";
+import { preloadImages } from "@/lib/imagePreloader";
 import { useGame } from "@/lib/useGame";
 
 const TITLE = "A Birthday Mystery - guess who wished you";
@@ -83,6 +84,7 @@ function Index() {
 
   useEffect(() => {
     setupMedia();
+    preloadImages();
   }, []);
 
   useEffect(() => {

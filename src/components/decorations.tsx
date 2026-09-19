@@ -215,7 +215,7 @@ export function PolaroidFrame({
         <img
           src={src}
           alt={alt}
-          loading="lazy"
+          loading="eager"
           className="aspect-square w-full object-cover transition-transform duration-500 hover:scale-110"
         />
       </div>
@@ -247,7 +247,7 @@ export function TapeFrame({
         border: "3px solid var(--parchment)",
       }}
     >
-      <img src={src} alt={alt} loading="lazy" className="h-28 w-28 object-cover rounded-sm" />
+      <img src={src} alt={alt} loading="eager" className="h-28 w-28 object-cover rounded-sm" />
     </div>
   );
 }
@@ -268,7 +268,7 @@ export function StampFrame({
       className={cn("deckle relative inline-block bg-parchment p-2 shadow-md", className)}
       style={{ transform: `rotate(${rotate}deg)` }}
     >
-      <img src={src} alt={alt} loading="lazy" className="h-24 w-24 object-cover rounded-sm border border-cocoa/30" />
+      <img src={src} alt={alt} loading="eager" className="h-24 w-24 object-cover rounded-sm border border-cocoa/30" />
       <div className="mt-1 text-center font-sans text-[0.55rem] uppercase tracking-widest text-burgundy">
         SUPREETHAA ★ 23
       </div>
